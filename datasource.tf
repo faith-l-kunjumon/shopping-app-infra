@@ -6,11 +6,6 @@ data "aws_ami" "latest" {
 
 
   filter {
-    name   = "tag:project"
-    values = ["${var.project_name}"]
-  }
-
-  filter {
     name   = "tag:env"
     values = ["${var.project_env}"]
   }
