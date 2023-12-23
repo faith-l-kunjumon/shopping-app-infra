@@ -3,7 +3,7 @@ name: "prod Infra Build"
 on:
   push:
     branches:
-      - dev
+      - prod
 
 jobs:
   build:
