@@ -58,7 +58,7 @@ resource "aws_instance" "frontend" {
   instance_type          = var.instance_type
   key_name               = aws_key_pair.shopping.key_name
   user_data              = file("setup.sh")
-  vpc_security_group_ids = [aws_security_group.fronend.id]
+  vpc_security_group_ids = [aws_security_group.frontend.id]
   tags = {
     Name    = "${var.project_name}-${var.project_env}-frontend"
     project = var.project_name
