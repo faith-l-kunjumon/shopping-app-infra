@@ -11,7 +11,7 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.PROD_ACCESS_KEY }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_SECRET_KEY }}
-      AWS_REGION: ${{ secrets.PROD_REGION }}
+      AWS_REGION: ${{ secrets.PROD_AWS_REGION }}
 
     steps:
     - name: "Repository Checkout"
@@ -27,7 +27,7 @@ jobs:
         terraform init \
           -backend-config="bucket=${{ secrets.PROD_S3_BUCKET }}" \
           -backend-config="key=terraform.tfstate" \
-          -backend-config="region=${{ secrets.PROD_REGION }}" \
+          -backend-config="region=${{ secrets.S3_REGION }}" \
           -backend-config="access_key=${{ secrets.PROD_ACCESS_KEY }}" \
           -backend-config="secret_key=${{ secrets.PROD_SECRET_KEY }}"
 
