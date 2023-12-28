@@ -1,9 +1,9 @@
+---
 name: "prod Infra Build"
 
 on:
   repository_dispatch:
     types: [ prod-deploy-event ]
-
   push:
     branches:
       - prod
@@ -45,4 +45,3 @@ jobs:
 
     - name: "Terraform apply"
       run: terraform apply -auto-approve -var-file=prod.tfvars
-
