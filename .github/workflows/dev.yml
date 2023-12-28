@@ -1,6 +1,8 @@
 name: "dev Infra Build"
 
 on:
+  repository_dispatch:
+    types: [ dev-deploy-event ]
   push:
     branches:
       - dev
